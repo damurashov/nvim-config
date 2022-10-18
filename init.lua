@@ -15,6 +15,8 @@ vim.api.nvim_create_user_command("DAttabs", "set noexpandtab shiftwidth=4 tabsto
 vim.api.nvim_create_user_command("DAtspaces", "set expandtab shiftwidth=4 tabstop=4", {})  -- Text use Spaces
 vim.api.nvim_create_user_command("DAptefif", "Telescope find_files", {})  -- Plugin TElescope FInd Files
 vim.api.nvim_create_user_command("DApteb", "Telescope buffers", {})  -- Plugin TElescope Buffers
+vim.api.nvim_set_keymap("n", "-p", ":Telescope find_files <CR>", {})
+vim.api.nvim_set_keymap("n", "-g", ":Telescope live_grep <CR>", {})
 
 -- Remove trailing whitespaces before saving to file
 function text_remove_trailing_whitespace()
