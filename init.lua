@@ -18,7 +18,17 @@ vim.api.nvim_create_user_command("DApteb", "Telescope buffers", {})  -- Plugin T
 vim.api.nvim_create_user_command("DAttg", "Telescope buffers", {})  -- Text TaGs
 vim.api.nvim_set_keymap("n", "-p", ":Telescope find_files <CR>", {})  -- Find files in the current pwd
 vim.api.nvim_set_keymap("n", "-g", ":Telescope current_buffer_fuzzy_find <CR>", {})  -- Search for a sequence in the current file using fuzzy search
+vim.api.nvim_set_keymap("n", "-u", ":lua =config_packer_sync() <CR>", {})  -- Synchronize packer
 -- vim.api.nvim_set_keymap("n", "-t", " :lua =win_tab_new() <CR>", {})  -- Open new tab and search for files
+
+function config_packer_sync()
+	require("packer").startup(
+		function(use)
+			use 'neovim/nvim-lspconfig'
+			use 'simrat39/rust-tools.nvim'
+		end
+	).sync()
+end
 
 function win_tab_new()
 	vim.cmd([[
@@ -34,4 +44,4 @@ end
 
 vim.api.nvim_create_autocmd({"BufWritePre"}, {pattern = {"*"}, callback=text_remove_trailing_whitespace})
 
-require("telescope")  -- Enable plugin "Telescope"
+require("my_plugins")
