@@ -15,9 +15,17 @@ vim.api.nvim_create_user_command("DAttabs", "set noexpandtab shiftwidth=4 tabsto
 vim.api.nvim_create_user_command("DAtspaces", "set expandtab shiftwidth=4 tabstop=4", {})  -- Text use Spaces
 vim.api.nvim_create_user_command("DAptefif", "Telescope find_files", {})  -- Plugin TElescope FInd Files
 vim.api.nvim_create_user_command("DApteb", "Telescope buffers", {})  -- Plugin TElescope Buffers
-vim.api.nvim_set_keymap("n", "-p", ":Telescope find_files <CR>", {})
-vim.api.nvim_set_keymap("n", "-g", ":Telescope current_buffer_fuzzy_find <CR>", {})
-vim.api.nvim_set_keymap("n", "-G", ":Telescope live_grep <CR>", {})
+vim.api.nvim_create_user_command("DAttg", "Telescope buffers", {})  -- Text TaGs
+vim.api.nvim_set_keymap("n", "-p", ":Telescope find_files <CR>", {})  -- Find files in the current pwd
+vim.api.nvim_set_keymap("n", "-g", ":Telescope current_buffer_fuzzy_find <CR>", {})  -- Search for a sequence in the current file using fuzzy search
+vim.api.nvim_set_keymap("n", "-t", " :lua =win_tab_new() <CR>", {})  -- Open new tab and search for files
+
+function win_tab_new()
+	vim.cmd([[
+		tabnew
+		Telescope find_files
+	]])
+end
 
 -- Remove trailing whitespaces before saving to file
 function text_remove_trailing_whitespace()
