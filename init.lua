@@ -12,9 +12,9 @@ vim.api.nvim_create_user_command("DAwwide", "vertical resize 120", {})  -- Windo
 vim.api.nvim_create_user_command("DAwt", "tab split", {})  -- Window split into Tab
 vim.api.nvim_create_user_command("DAcreload", "source ~/.config/nvim/init.lua", {})  -- Config Reload
 vim.api.nvim_create_user_command("DAttabs", "set noexpandtab shiftwidth=4 tabstop=4", {})  -- Text use Tabs
-vim.api.nvim_create_user_command("DAtspaces", "set expandtab shiftwidth=4 tabstop=4", {})  -- Test use Spaces
-vim.api.nvim_create_user_command("DAptfif", "Telescope find_files", {})  -- Plugin Telescope Find Files
-vim.api.nvim_create_user_command("DApteb", "Telescope buffers", {})  -- Plugin Telescope Buffers
+vim.api.nvim_create_user_command("DAtspaces", "set expandtab shiftwidth=4 tabstop=4", {})  -- Text use Spaces
+vim.api.nvim_create_user_command("DAptefif", "Telescope find_files", {})  -- Plugin TElescope FInd Files
+vim.api.nvim_create_user_command("DApteb", "Telescope buffers", {})  -- Plugin TElescope Buffers
 
 -- Remove trailing whitespaces before saving to file
 function text_remove_trailing_whitespace()
