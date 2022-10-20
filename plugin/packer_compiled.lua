@@ -83,6 +83,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dm/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  ["vim-easy-align"] = {
+    loaded = true,
+    path = "/home/dm/.local/share/nvim/site/pack/packer/start/vim-easy-align",
+    url = "https://github.com/junegunn/vim-easy-align"
   }
 }
 
