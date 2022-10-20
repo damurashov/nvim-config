@@ -18,6 +18,7 @@ vim.api.nvim_create_user_command("DAptefif", "Telescope find_files", {})  -- Plu
 vim.api.nvim_create_user_command("DApteb", "Telescope buffers", {})  -- Plugin TElescope Buffers
 vim.api.nvim_create_user_command("DAttg", "Telescope buffers", {})  -- Text TaGs
 vim.api.nvim_set_keymap("n", "-p", ":Telescope find_files <CR>", {})  -- Find files in the current pwd
+vim.api.nvim_set_keymap("n", "-P", ":Telescope buffers <CR>", {})  -- Search among opened buffers
 vim.api.nvim_set_keymap("n", "-g", ":Telescope current_buffer_fuzzy_find <CR>", {})  -- Search for a sequence in the current file using fuzzy search
 vim.api.nvim_set_keymap("n", "-G", ":Telescope live_grep <CR>", {})  -- Search among files using fuzzy search
 vim.api.nvim_set_keymap("n", "-u", ":lua =config_packer_sync() <CR>", {})  -- Synchronize packer
