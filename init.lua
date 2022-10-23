@@ -5,6 +5,7 @@ vim.cmd([[
 	set number
 	colorscheme peachpuff
 	vnoremap :Y "+y
+	nnoremap :Q :q <CR> :tabprevious <CR>
 ]])
 vim.g.rust_recommended_style = 0
 vim.g.python_recommended_style = 0
@@ -46,6 +47,18 @@ function text_remove_trailing_whitespace()
 	vim.cmd([[:%s/\s\+$//e]])
 end
 
+function config_numbering_set_relative()
+	vim.cmd([[set relativenumber]])
+end
+
+function config_numbering_set_absolute()
+	vim.cmd([[set norelativenumber]])
+end
+
 vim.api.nvim_create_autocmd({"BufWritePre"}, {pattern = {"*"}, callback=text_remove_trailing_whitespace})
+
+-- if vim.api.exists("g:neovide") then
+-- 	vim.cmd([[colorscheme morning]])
+-- end
 
 require("my_plugins")
