@@ -6,6 +6,7 @@ vim.cmd([[
 	colorscheme peachpuff
 	vnoremap :Y "+y
 	nnoremap :Q :q <CR> :tabprevious <CR>
+	colorscheme github_light_default
 ]])
 vim.g.rust_recommended_style = 0
 vim.g.python_recommended_style = 0
@@ -23,6 +24,7 @@ vim.api.nvim_set_keymap("n", "-P", ":Telescope buffers <CR>", {})  -- Search amo
 vim.api.nvim_set_keymap("n", "-g", ":Telescope current_buffer_fuzzy_find <CR>", {})  -- Search for a sequence in the current file using fuzzy search
 vim.api.nvim_set_keymap("n", "-G", ":Telescope live_grep <CR>", {})  -- Search among files using fuzzy search
 vim.api.nvim_set_keymap("n", "-u", ":lua =config_packer_sync() <CR>", {})  -- Synchronize packer
+vim.g.mapleader = ','
 -- vim.api.nvim_set_keymap("n", "-t", " :lua =win_tab_new() <CR>", {})  -- Open new tab and search for files
 
 function config_packer_sync()
@@ -31,6 +33,7 @@ function config_packer_sync()
 			use 'neovim/nvim-lspconfig'
 			use 'simrat39/rust-tools.nvim'
 			use 'junegunn/vim-easy-align'
+			use 'projekt0n/github-nvim-theme'
 		end
 	).sync()
 end
