@@ -34,6 +34,8 @@ function config_packer_sync()
 			use 'simrat39/rust-tools.nvim'
 			use 'junegunn/vim-easy-align'
 			use 'projekt0n/github-nvim-theme'
+			use 'nvim-lua/plenary.nvim'
+			use 'mfussenegger/nvim-dap'
 		end
 	).sync()
 end
