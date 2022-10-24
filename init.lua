@@ -24,14 +24,9 @@ vim.api.nvim_set_keymap("n", "-P", ":Telescope buffers <CR>", {})  -- Search amo
 vim.api.nvim_set_keymap("n", "-g", ":Telescope current_buffer_fuzzy_find <CR>", {})  -- Search for a sequence in the current file using fuzzy search
 vim.api.nvim_set_keymap("n", "-G", ":Telescope live_grep <CR>", {})  -- Search among files using fuzzy search
 vim.api.nvim_set_keymap("n", "-u", ":lua =config_packer_sync() <CR>", {})  -- Synchronize packer
-vim.api.nvim_set_keymap("n", "-c", ":lua =plugin_completion_enable() <CR>", {})
+vim.api.nvim_set_keymap("n", "-c", ":lua =plugin_beefy_require() <CR>", {})
 vim.g.mapleader = ','
 -- vim.api.nvim_set_keymap("n", "-t", " :lua =win_tab_new() <CR>", {})  -- Open new tab and search for files
-
-function plugin_completion_enable()
-	print("Completion enabled")
-	return require("my_plugins_completion")
-end
 
 function config_packer_sync()
 	require("packer").startup(
@@ -89,8 +84,19 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {pattern = {"*"}, callback=text_rem
 -- if vim.api.exists("g:neovide") then
 --	vim.cmd([[colorscheme morning]])
 -- end
+function plugin_beefy_require()
+	print("Beefy enabled")
+	require("my_plugins_completion")
+	require("my_plugins_lsp")
+	require("my_plugins_mason")
+end
 
-require("my_plugins")
-require("my_plugins_lsp")
---require("my_plugins_completion")
-require("my_plugins_treesitter")
+function plugin_default()
+	require("my_plugins_telescope")
+	require("my_plugins_treesitter")
+	require("my_plugins_rust_tools")
+end
+
+vim.cmd [[packadd packer.nvim]]
+plugin_default()
+
