@@ -38,6 +38,21 @@ function config_packer_sync()
 			use 'mfussenegger/nvim-dap'
 			use 'williamboman/mason-lspconfig.nvim'
 			use 'williamboman/mason.nvim'
+
+			-- Completion framework:
+			use 'hrsh7th/nvim-cmp'
+
+			-- LSP completion source:
+			use 'hrsh7th/cmp-nvim-lsp'
+
+			-- Useful completion sources:
+			use 'hrsh7th/cmp-nvim-lua'
+			use 'hrsh7th/cmp-nvim-lsp-signature-help'
+			use 'hrsh7th/cmp-vsnip'
+			use 'hrsh7th/cmp-path'
+			use 'hrsh7th/cmp-buffer'
+			use 'hrsh7th/vim-vsnip'
+			use 'nvim-treesitter/nvim-treesitter'
 		end
 	).sync()
 end
@@ -65,7 +80,10 @@ end
 vim.api.nvim_create_autocmd({"BufWritePre"}, {pattern = {"*"}, callback=text_remove_trailing_whitespace})
 
 -- if vim.api.exists("g:neovide") then
--- 	vim.cmd([[colorscheme morning]])
+--	vim.cmd([[colorscheme morning]])
 -- end
 
 require("my_plugins")
+require("my_plugins_lsp")
+require("my_plugins_completion")
+require("my_plugins_treesitter")
