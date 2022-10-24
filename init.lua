@@ -36,8 +36,8 @@ function config_packer_sync()
 			use 'projekt0n/github-nvim-theme'
 			use 'nvim-lua/plenary.nvim'
 			use 'mfussenegger/nvim-dap'
-			use 'williamboman/mason-lspconfig.nvim'
-			use 'williamboman/mason.nvim'
+			-- use 'williamboman/mason-lspconfig.nvim'
+			-- use 'williamboman/mason.nvim'
 
 			-- Completion framework:
 			use 'hrsh7th/nvim-cmp'
@@ -52,6 +52,7 @@ function config_packer_sync()
 			use 'hrsh7th/cmp-path'
 			use 'hrsh7th/cmp-buffer'
 			use 'hrsh7th/vim-vsnip'
+
 			use 'nvim-treesitter/nvim-treesitter'
 		end
 	).sync()

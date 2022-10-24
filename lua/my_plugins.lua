@@ -18,4 +18,3 @@ function config_setup_rust_tools()
 end
 
 config_setup_rust_tools()
-require("mason").setup()
