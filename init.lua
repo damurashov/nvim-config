@@ -36,6 +36,8 @@ function config_packer_sync()
 			use 'projekt0n/github-nvim-theme'
 			use 'nvim-lua/plenary.nvim'
 			use 'mfussenegger/nvim-dap'
+			use 'williamboman/mason-lspconfig.nvim'
+			use 'williamboman/mason.nvim'
 		end
 	).sync()
 end
