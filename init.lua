@@ -55,6 +55,7 @@ function config_packer_sync()
 			use 'hrsh7th/vim-vsnip'
 
 			use 'nvim-treesitter/nvim-treesitter'
+			use 'puremourning/vimspector'
 		end
 	).sync()
 end
@@ -89,6 +90,7 @@ function plugin_beefy_require()
 	require("my_plugins_completion")
 	require("my_plugins_lsp")
 	require("my_plugins_mason")
+	require("my_plugins_vimspector")
 end
 
 function plugin_default()
