@@ -87,16 +87,16 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {pattern = {"*"}, callback=text_rem
 -- end
 function plugin_beefy_require()
 	print("Beefy enabled")
-	require("my_plugins_completion")
 	require("my_plugins_lsp")
 	require("my_plugins_mason")
 	require("my_plugins_vimspector")
+	require("my_plugins_treesitter")
+	require("my_plugins_rust_tools")
 end
 
 function plugin_default()
 	require("my_plugins_telescope")
-	require("my_plugins_treesitter")
-	require("my_plugins_rust_tools")
+	require("my_plugins_completion")
 end
 
 vim.cmd [[packadd packer.nvim]]
