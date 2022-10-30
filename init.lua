@@ -92,11 +92,11 @@ function plugin_beefy_require()
 	require("my_plugins_vimspector")
 	require("my_plugins_treesitter")
 	require("my_plugins_rust_tools")
+	require("my_plugins_completion")
 end
 
 function plugin_default()
 	require("my_plugins_telescope")
-	require("my_plugins_completion")
 end
 
 vim.cmd [[packadd packer.nvim]]
