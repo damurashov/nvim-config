@@ -16,6 +16,8 @@ vim.api.nvim_create_user_command("DAcreload", "source ~/.config/nvim/init.lua", 
 vim.api.nvim_create_user_command("DAcedit", "tabnew ~/.config/nvim/init.lua", {})  -- Config EDIT
 vim.api.nvim_create_user_command("DAttabs", "set noexpandtab shiftwidth=4 tabstop=4", {})  -- Text use Tabs
 vim.api.nvim_create_user_command("DAtspaces", "set expandtab shiftwidth=4 tabstop=4", {})  -- Text use Spaces
+vim.api.nvim_create_user_command("DAtwrap", "set wrap", {})  -- Text use Spaces
+vim.api.nvim_create_user_command("DAtnwrap", "set nowrap", {})  -- Text use Spaces
 vim.api.nvim_create_user_command("DAptefif", "Telescope find_files", {})  -- Plugin TElescope FInd Files
 vim.api.nvim_create_user_command("DApteb", "Telescope buffers", {})  -- Plugin TElescope Buffers
 vim.api.nvim_create_user_command("DAttg", "Telescope buffers", {})  -- Text TaGs
@@ -94,6 +96,10 @@ function plugin_beefy_require()
 	require("my_plugins_treesitter")
 	require("my_plugins_rust_tools")
 	require("my_plugins_completion")
+	vim.cmd([[
+		set colorcolumn=79
+		set colorcolumn+=120
+	]])
 end
 
 function plugin_default()
