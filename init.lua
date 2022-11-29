@@ -28,6 +28,7 @@ vim.api.nvim_set_keymap("n", "-m", ":Telescope marks <CR>", {})  -- Search for a
 vim.api.nvim_set_keymap("n", "-G", ":Telescope live_grep <CR>", {})  -- Search among files using fuzzy search
 vim.api.nvim_set_keymap("n", "-u", ":lua =config_packer_sync() <CR>", {})  -- Synchronize packer
 vim.api.nvim_set_keymap("n", "-c", ":lua =plugin_beefy_require() <CR>", {})
+vim.api.nvim_set_keymap("n", "-z", ":lua =window_zoom() <CR>", {})  -- Zoom window fullscreen
 vim.g.mapleader = ','
 -- vim.api.nvim_set_keymap("n", "-t", " :lua =win_tab_new() <CR>", {})  -- Open new tab and search for files
 
@@ -104,6 +105,13 @@ end
 
 function plugin_default()
 	require("my_plugins_telescope")
+end
+
+function window_zoom()
+	vim.cmd([[
+		resize 10000
+		vertical resize 10000
+	]])
 end
 
 vim.cmd [[packadd packer.nvim]]
