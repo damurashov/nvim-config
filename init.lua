@@ -108,4 +108,5 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 plugin_default()
+config_numbering_set_relative()
 
