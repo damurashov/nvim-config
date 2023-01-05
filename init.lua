@@ -99,7 +99,8 @@ function plugin_beefy_require()
 	require("my_plugins_rust_tools")
 	require("my_plugins_completion")
 	vim.cmd([[
-		set colorcolumn=79
+		set colorcolumn=80
+		set colorcolumn+=100
 		set colorcolumn+=120
 	]])
 end
