@@ -8,7 +8,7 @@ vim.cmd([[
 	nnoremap :Q :q <CR> :tabprevious <CR>
 	colorscheme github_light_default
 ]])
-vim.g.rust_recommended_style = 0
+-- vim.g.rust_recommended_style = 0
 vim.g.python_recommended_style = 0
 vim.api.nvim_create_user_command("DAwwide", "vertical resize 120", {})  -- Window Widen
 vim.api.nvim_create_user_command("DAwt", "tab split", {})  -- Window split into Tab
