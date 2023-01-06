@@ -15,8 +15,14 @@ vim.api.nvim_create_user_command("DAwt", "tab split", {})  -- Window split into 
 vim.api.nvim_create_user_command("DAwoc", "!code %", {})  -- Window Open in Code
 vim.api.nvim_create_user_command("DAcreload", "source ~/.config/nvim/init.lua", {})  -- Config Reload
 vim.api.nvim_create_user_command("DAcedit", "tabnew ~/.config/nvim/init.lua", {})  -- Config EDIT
-vim.api.nvim_create_user_command("DAttabs", "set noexpandtab shiftwidth=4 tabstop=4", {})  -- Text use Tabs
-vim.api.nvim_create_user_command("DAtspaces", "set expandtab shiftwidth=4 tabstop=4", {})  -- Text use Spaces
+-- Tabulation
+vim.api.nvim_create_user_command("DAttabs2", "set noexpandtab shiftwidth=2 tabstop=2", {})  -- Text use Tabs
+vim.api.nvim_create_user_command("DAtspaces2", "set expandtab shiftwidth=2 tabstop=2", {})  -- Text use Spaces
+vim.api.nvim_create_user_command("DAttabs4", "set noexpandtab shiftwidth=4 tabstop=4", {})  -- Text use Tabs
+vim.api.nvim_create_user_command("DAtspaces4", "set expandtab shiftwidth=4 tabstop=4", {})  -- Text use Spaces
+vim.api.nvim_create_user_command("DAttabs8", "set noexpandtab shiftwidth=8 tabstop=8", {})  -- Text use Tabs
+vim.api.nvim_create_user_command("DAtspaces8", "set expandtab shiftwidth=8 tabstop=8", {})  -- Text use Spaces
+-- Other text commands
 vim.api.nvim_create_user_command("DAtwrap", "set wrap", {})  -- Text use Spaces
 vim.api.nvim_create_user_command("DAtnwrap", "set nowrap", {})  -- Text use Spaces
 vim.api.nvim_create_user_command("DAptefif", "Telescope find_files", {})  -- Plugin TElescope FInd Files
